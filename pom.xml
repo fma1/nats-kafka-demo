@@ -21,6 +21,16 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.danielasfregola</groupId>
+            <artifactId>twitter4s_2.13</artifactId>
+            <version>7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.azhur</groupId>
+            <artifactId>kafka-serde-json4s_2.13</artifactId>
+            <version>0.6.2</version>
+        </dependency>
+        <dependency>
             <groupId>org.scala-lang.modules</groupId>
             <artifactId>scala-java8-compat_2.13</artifactId>
             <version>1.0.0-RC1</version>
