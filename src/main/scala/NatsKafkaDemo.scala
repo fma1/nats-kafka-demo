@@ -1,23 +1,21 @@
+import Utils._
 import com.danielasfregola.twitter4s.entities.Tweet
 import com.danielasfregola.twitter4s.processors.TwitterProcessor.{json4sFormats, serialization => theSerialization}
 import io.github.azhur.kafkaserdejson4s.Json4sSupport
-import io.nats.client.{Connection, Dispatcher, MessageHandler, Nats}
+import io.nats.client.{Connection, Nats}
 import org.apache.kafka.clients.consumer.{ConsumerConfig, ConsumerRecord, KafkaConsumer}
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord}
 import org.apache.kafka.common.serialization.Serdes.StringSerde
 import org.apache.kafka.common.serialization.{Serde, StringDeserializer, StringSerializer}
-import org.apache.kafka.streams.{KafkaStreams, StreamsBuilder, StreamsConfig}
-import org.apache.kafka.streams.kstream.Consumed
 import org.apache.kafka.streams.kstream.Consumed._
-import org.json4s.{Formats, Serialization}
+import org.apache.kafka.streams.{KafkaStreams, StreamsBuilder, StreamsConfig}
+import org.json4s.Serialization
 import org.slf4j.{Logger, LoggerFactory}
+import slick.jdbc.PostgresProfile.api._
 
 import java.time.Duration
 import java.util.Properties
-import scala.compat.java8.DurationConverters.FiniteDurationops
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.Future
-import scala.concurrent.duration.DurationInt
 import scala.io.{BufferedSource, Source}
 import scala.jdk.CollectionConverters._
 import scala.util.{Failure, Success}
@@ -31,6 +29,9 @@ object NatsKafkaDemo {
   private[this] val GROUP_ID = "nats-kafka-demo-1"
   private[this] val TIMEOUT_MILLS = 100
   private[this] val APPLICATION_ID = "streams-filter-tweets"
+
+  val db = getDB
+  val tweetsTable = TableQuery[TweetsTable]
 
   val producerProps = new Properties()
   producerProps.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVER)
@@ -54,16 +55,14 @@ object NatsKafkaDemo {
   }
 
   implicit val serialization: Serialization = theSerialization
-  // val serde: Serde[Tweet] = Json4sSupport.toSerde
-  val serde: Serde[String] = new StringSerde()
+  val serde: Serde[Tweet] = Json4sSupport.toSerde
 
   def main(args: Array[String]): Unit = {
     // Kafka Stuff
     val builder = new StreamsBuilder
     builder.stream(FROM_TOPIC, `with`(serde, serde))
-      .filter((_, tweetJson) => {
-        logger.info(s"Tweet JSON: $tweetJson")
-        val tweet = serialization.read[Tweet](tweetJson)
+      .filter((_, tweet) => {
+        logger.info(s"KafkaStreams Tweet: $tweet")
         tweet.text.contains("RT @")
       })
       .to(TO_TOPIC)
@@ -73,27 +72,6 @@ object NatsKafkaDemo {
     val streams = new KafkaStreams(builder.build(), streamsProps)
     consumer.subscribe(List(TO_TOPIC).asJavaCollection)
     streams.start()
-
-    Future {
-      while (true) {
-        val records = consumer.poll(Duration.ofMillis(TIMEOUT_MILLS))
-        records.iterator().forEachRemaining { record: ConsumerRecord[String, String] =>
-          logger.info(
-            s"""
-               |message
-               |  offset=${record.offset}
-               |  partition=${record.partition}
-               |  key=${record.key}
-               |  value=${record.value}
-           """.stripMargin)
-        }
-      }
-    } onComplete {
-      case Success(_) =>
-        logger.info(s"Successfully processed all records in topic $TO_TOPIC!")
-      case Failure(exception) =>
-        logger.error(s"Error processing records in topic $TO_TOPIC!", exception)
-    }
 
     // NATS stuff
     val nc: Connection = Nats.connect("nats://localhost:4222")
@@ -120,6 +98,38 @@ object NatsKafkaDemo {
       source.close()
     }
 
-    Thread.sleep(20000)
+
+    try {
+      while (true) {
+        val records = consumer.poll(Duration.ofMillis(TIMEOUT_MILLS))
+        records.iterator().forEachRemaining { record: ConsumerRecord[String, String] =>
+          logger.info(
+            s"""
+               |message
+               | offset=${record.offset}
+               | partition=${record.partition}
+               | key=${record.key}
+               | value=${record.value}
+              """.stripMargin)
+
+          val tweet: Tweet = serialization.read[Tweet](record.value)
+
+          logger.info(
+            s"""Adding Tweet with offset ${record.offset} and partition ${record.partition} and key ${record.key}...""".stripMargin)
+
+          db.run(tweetsTable ++= List(tweet.toTweetTuple)) onComplete {
+            case Success(_) =>
+              logger.info(
+                s"""Successfully added Tweet with offset ${record.offset} and partition ${record.partition} and key ${record.key}""".stripMargin)
+            case Failure(exception) =>
+              logger.error(
+                s"""Error adding Tweet with offset ${record.offset}|and partition ${record.partition} and key ${record.key}""".stripMargin, exception)
+          }
+        }
+      }
+    } finally db.close
+
   }
+
+
 }
