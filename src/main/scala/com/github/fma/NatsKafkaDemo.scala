@@ -1,23 +1,20 @@
-import Utils._
+package com.github.fma
+
 import com.danielasfregola.twitter4s.entities.Tweet
-import com.danielasfregola.twitter4s.processors.TwitterProcessor.{json4sFormats, serialization => theSerialization}
+import com.github.fma.Utils.{TweetsTable, getDB}
 import io.github.azhur.kafkaserdejson4s.Json4sSupport
 import io.nats.client.{Connection, Nats}
 import org.apache.kafka.clients.consumer.{ConsumerConfig, ConsumerRecord, KafkaConsumer}
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord}
 import org.apache.kafka.common.serialization.Serdes.StringSerde
 import org.apache.kafka.common.serialization.{Serde, StringDeserializer, StringSerializer}
-import org.apache.kafka.streams.kstream.Consumed._
 import org.apache.kafka.streams.{KafkaStreams, StreamsBuilder, StreamsConfig}
 import org.json4s.Serialization
 import org.slf4j.{Logger, LoggerFactory}
-import slick.jdbc.PostgresProfile.api._
 
 import java.time.Duration
 import java.util.Properties
-import scala.concurrent.ExecutionContext.Implicits.global
 import scala.io.{BufferedSource, Source}
-import scala.jdk.CollectionConverters._
 import scala.util.{Failure, Success}
 
 object NatsKafkaDemo {

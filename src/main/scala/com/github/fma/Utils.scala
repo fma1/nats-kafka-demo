@@ -1,3 +1,5 @@
+package com.github.fma
+
 import com.danielasfregola.twitter4s.entities.Tweet
 import com.typesafe.config.ConfigFactory
 import org.slf4j.{Logger, LoggerFactory}

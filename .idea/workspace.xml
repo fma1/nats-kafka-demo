@@ -60,7 +60,7 @@
   <component name="RunManager">
     <configuration name="NatsKafkaDemo" type="Application" factoryName="Application" temporary="true">
       <output_file path="C:\Users\John\nats-kafka-demo.log" is_save="true" />
-      <option name="MAIN_CLASS_NAME" value="NatsKafkaDemo" />
+      <option name="MAIN_CLASS_NAME" value="com.github.fma.NatsKafkaDemo" />
       <module name="nats-kafka-demo" />
       <method v="2">
         <option name="Make" enabled="true" />
