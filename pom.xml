@@ -19,6 +19,7 @@
         <slf4j.version>1.7.30</slf4j.version>
         <scalatest.version>3.2.8</scalatest.version>
         <testcontainers.version>1.15.3</testcontainers.version>
+        <specs2.version>4.10.6</specs2.version>
     </properties>
 
     <dependencies>
@@ -109,6 +110,18 @@
             <groupId>org.scalatest</groupId>
             <artifactId>scalatest_2.13</artifactId>
             <version>${scalatest.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.specs2</groupId>
+            <artifactId>specs2-core_2.13</artifactId>
+            <version>${specs2.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.specs2</groupId>
+            <artifactId>specs2-mock_2.13</artifactId>
+            <version>${specs2.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

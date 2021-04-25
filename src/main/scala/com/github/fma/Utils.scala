@@ -1,7 +1,7 @@
 package com.github.fma
 
 import com.danielasfregola.twitter4s.entities.Tweet
-import com.typesafe.config.ConfigFactory
+import com.typesafe.config.{Config, ConfigFactory}
 import org.slf4j.{Logger, LoggerFactory}
 import slick.jdbc.PostgresProfile.api._
 
@@ -15,8 +15,11 @@ object Utils {
 
   val logger: Logger = LoggerFactory.getLogger(classOf[Utils])
 
+  // var for mocking purposes
+  private[fma] var getConfig: () => Config = () => ConfigFactory.load("application")
+
   def getDB = {
-    val config = ConfigFactory.load("application")
+    val config = getConfig()
     val url = config.getString("db.url")
     val username = config.getString("db.username")
     val password = config.getString("db.password")

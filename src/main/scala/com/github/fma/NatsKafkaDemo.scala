@@ -18,6 +18,7 @@ import slick.jdbc.PostgresProfile.api._
 import java.time.Duration
 import java.util.Properties
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future
 import scala.io.{BufferedSource, Source}
 import scala.jdk.CollectionConverters._
 import scala.util.{Failure, Success}
@@ -91,6 +92,45 @@ object NatsKafkaDemo {
       })
     dispatcher.subscribe(FROM_TOPIC)
 
+    // ------------------------------------------------------------------------
+
+    Future {
+      try {
+        while (true) {
+          val records = consumer.poll(Duration.ofMillis(TIMEOUT_MILLS))
+          records.iterator().forEachRemaining { record: ConsumerRecord[String, String] =>
+            logger.info(
+              s"""
+                 |message
+                 | offset=${record.offset}
+                 | partition=${record.partition}
+                 | key=${record.key}
+                 | value=${record.value}
+              """.stripMargin)
+
+            val tweet: Tweet = serialization.read[Tweet](record.value)
+
+            logger.info(
+              s"""Adding Tweet with offset ${record.offset} and partition ${record.partition} and key ${record.key}...""".stripMargin)
+
+            db.run(tweetsTable ++= List(tweet.toTweetTuple)) onComplete {
+              case Success(_) =>
+                logger.info(
+                  s"""Successfully added Tweet with offset ${record.offset} and partition ${record.partition} and key ${record.key}""".stripMargin)
+              case Failure(exception) =>
+                logger.error(
+                  s"""Error adding Tweet with offset ${record.offset}|and partition ${record.partition} and key ${record.key}""".stripMargin, exception)
+            }
+          }
+        }
+      } finally db.close
+    } onComplete {
+      case Success(_) =>
+        logger.info("Successfully processed all tweets from Kafka Consumer")
+      case Failure(exception) =>
+        logger.error("Error processing all tweets from Kafka Consumer", exception)
+    }
+
     val source: BufferedSource = Source.fromURL(getClass.getResource("tweets.json"))
     try {
       source
@@ -100,38 +140,6 @@ object NatsKafkaDemo {
       source.close()
     }
 
-
-    try {
-      while (true) {
-        val records = consumer.poll(Duration.ofMillis(TIMEOUT_MILLS))
-        records.iterator().forEachRemaining { record: ConsumerRecord[String, String] =>
-          logger.info(
-            s"""
-               |message
-               | offset=${record.offset}
-               | partition=${record.partition}
-               | key=${record.key}
-               | value=${record.value}
-              """.stripMargin)
-
-          val tweet: Tweet = serialization.read[Tweet](record.value)
-
-          logger.info(
-            s"""Adding Tweet with offset ${record.offset} and partition ${record.partition} and key ${record.key}...""".stripMargin)
-
-          db.run(tweetsTable ++= List(tweet.toTweetTuple)) onComplete {
-            case Success(_) =>
-              logger.info(
-                s"""Successfully added Tweet with offset ${record.offset} and partition ${record.partition} and key ${record.key}""".stripMargin)
-            case Failure(exception) =>
-              logger.error(
-                s"""Error adding Tweet with offset ${record.offset}|and partition ${record.partition} and key ${record.key}""".stripMargin, exception)
-          }
-        }
-      }
-    } finally db.close
-
+    Thread.sleep(2000)
   }
-
-
 }
