@@ -26,7 +26,7 @@ import scala.util.{Failure, Success}
 object NatsKafkaDemo {
   private[this] val logger: Logger = LoggerFactory.getLogger("NatsKafkaDemo")
 
-  private[this] val BOOTSTRAP_SERVER = "127.0.0.1:9092"
+  private[this] val BOOTSTRAP_SERVER = "127.0.0.1:9093"
   private[this] val FROM_TOPIC = "tweets-2"
   private[this] val TO_TOPIC = "retweets-2"
   private[this] val GROUP_ID = "nats-kafka-demo-1"
