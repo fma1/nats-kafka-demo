@@ -129,7 +129,10 @@ object NatsKafkaDemo {
         logger.error("Error processing all tweets from Kafka Consumer", exception)
     }
 
-    val source: BufferedSource = Source.fromURL(getClass.getResource("tweets.json"))
+    // TODO: Ideally tweets.json in tests should be a symlink, but I don't think that'd work with both Unix/Windows
+    val tweetInputStream =
+      getClass.getClassLoader.getResourceAsStream("tweets.json")
+    val source: BufferedSource = Source.fromInputStream(tweetInputStream)
     try {
       source
         .getLines()

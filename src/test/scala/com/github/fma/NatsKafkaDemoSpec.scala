@@ -1,5 +1,6 @@
 package com.github.fma
 
+import com.github.fma.NatsKafkaDemo.getClass
 import com.github.fma.Utils._
 import com.typesafe.config.Config
 import org.scalatest._
@@ -15,6 +16,7 @@ import slick.jdbc.PostgresProfile.api._
 
 import java.util.concurrent.Executors
 import scala.concurrent.{ExecutionContext, ExecutionContextExecutor}
+import scala.io.{BufferedSource, Source}
 
 class NatsKafkaDemoSpec extends AnyFlatSpec with should.Matchers with BeforeAndAfter with Mockito {
   val logger: Logger = LoggerFactory.getLogger(classOf[NatsKafkaDemoSpec])
@@ -28,6 +30,7 @@ class NatsKafkaDemoSpec extends AnyFlatSpec with should.Matchers with BeforeAndA
   val TEST_DB_USERNAME = "postgres1"
   val TEST_DB_PASSWORD = "root1"
 
+  // There are 196 lines in tweets.json
   val TWEETS_COUNT = 196
 
   val NATS_IMAGE: DockerImageName = DockerImageName.parse("nats:2.2.2")
@@ -103,13 +106,11 @@ class NatsKafkaDemoSpec extends AnyFlatSpec with should.Matchers with BeforeAndA
     Utils.getBootstrapServers = origGetBootstrapServers
   }
 
-  /*
   "NATS, Kafka and Postgres container" should "be running" in {
     assert(natsContainer.isRunning)
     assert(kafkaContainer.isRunning)
     assert(postgresContainer.isRunning)
   }
-   */
 
   "Postgres" should s"have ${TWEETS_COUNT} elements after NatsKafkaDemo runs" in {
     NatsKafkaDemo.main(Array())
