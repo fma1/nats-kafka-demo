@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8341cdc-7c2d-4398-b02e-4e15bad36273" name="Default Changelist" comment="Modified Utils.getDB with a getConfig() function&#10;Added logic to mock getConfig() function&#10;Added test to run NatsKafkaDemo and check Postgres">
+    <list default="true" id="b8341cdc-7c2d-4398-b02e-4e15bad36273" name="Default Changelist" comment="Got all 3 containers up and running">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/fma/NatsKafkaDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/fma/NatsKafkaDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/fma/Utils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/fma/Utils.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/com/github/fma/NatsKafkaDemoSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/com/github/fma/NatsKafkaDemoSpec.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +130,7 @@
       <updated>1618925679717</updated>
       <workItem from="1618925680836" duration="22463000" />
       <workItem from="1619308480397" duration="125000" />
-      <workItem from="1619308779966" duration="10478000" />
+      <workItem from="1619308779966" duration="13203000" />
     </task>
     <task id="LOCAL-00001" summary="Added NatsKafkaDemo and got logging and initial functionality of publishing to NATS working">
       <created>1618927324733</created>
@@ -215,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619391633511</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Got all 3 containers up and running">
+      <created>1619488755406</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1619488755406</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +252,7 @@
     <MESSAGE value="Got TestContainers working with simple test to confirm the container is running" />
     <MESSAGE value="IntelliJ stuff" />
     <MESSAGE value="Modified Utils.getDB with a getConfig() function&#10;Added logic to mock getConfig() function&#10;Added test to run NatsKafkaDemo and check Postgres" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified Utils.getDB with a getConfig() function&#10;Added logic to mock getConfig() function&#10;Added test to run NatsKafkaDemo and check Postgres" />
+    <MESSAGE value="Got all 3 containers up and running" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got all 3 containers up and running" />
   </component>
 </project>

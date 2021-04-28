@@ -26,42 +26,39 @@ import scala.util.{Failure, Success}
 object NatsKafkaDemo {
   private[this] val logger: Logger = LoggerFactory.getLogger("NatsKafkaDemo")
 
-  private[this] val BOOTSTRAP_SERVER = "127.0.0.1:9093"
-  private[this] val FROM_TOPIC = "tweets-2"
-  private[this] val TO_TOPIC = "retweets-2"
-  private[this] val GROUP_ID = "nats-kafka-demo-1"
-  private[this] val TIMEOUT_MILLS = 100
-  private[this] val APPLICATION_ID = "streams-filter-tweets"
-
   val db = getDB
   val tweetsTable = TableQuery[TweetsTable]
-
-  val producerProps = new Properties()
-  producerProps.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVER)
-  producerProps.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer].getName)
-  producerProps.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer].getName)
-
-  val consumerProps = new Properties()
-  consumerProps.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVER)
-  consumerProps.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, classOf[StringDeserializer].getName)
-  consumerProps.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, classOf[StringDeserializer].getName)
-  consumerProps.setProperty(ConsumerConfig.GROUP_ID_CONFIG, GROUP_ID)
-  consumerProps.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest")
-
-  val streamsProps: Properties = {
-    val p = new Properties()
-    p.put(StreamsConfig.APPLICATION_ID_CONFIG, APPLICATION_ID)
-    p.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVER)
-    p.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, classOf[StringSerde])
-    p.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, classOf[StringSerde])
-    p
-  }
 
   implicit val serialization: Serialization = theSerialization
   val serde: Serde[Tweet] = Json4sSupport.toSerde
 
   def main(args: Array[String]): Unit = {
     // Kafka Stuff
+    /*
+     * I was thinking of abstracting generating these props into a method,
+     * but for the purposes of this demo, such a method isn't necessary.
+     */
+    val producerProps = new Properties()
+    producerProps.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, getBootstrapServers())
+    producerProps.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer].getName)
+    producerProps.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer].getName)
+
+    val consumerProps = new Properties()
+    consumerProps.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, getBootstrapServers())
+    consumerProps.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, classOf[StringDeserializer].getName)
+    consumerProps.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, classOf[StringDeserializer].getName)
+    consumerProps.setProperty(ConsumerConfig.GROUP_ID_CONFIG, GROUP_ID)
+    consumerProps.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest")
+
+    val streamsProps: Properties = {
+      val p = new Properties()
+      p.put(StreamsConfig.APPLICATION_ID_CONFIG, APPLICATION_ID)
+      p.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, getBootstrapServers())
+      p.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, classOf[StringSerde])
+      p.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, classOf[StringSerde])
+      p
+    }
+
     val builder = new StreamsBuilder
     builder.stream(FROM_TOPIC, `with`(serde, serde))
       .filter((_, tweet) => {
@@ -77,7 +74,8 @@ object NatsKafkaDemo {
     streams.start()
 
     // NATS stuff
-    val nc: Connection = Nats.connect("nats://localhost:4222")
+    // TODO: Might want to abstract later to provide any URL and not just port
+    val nc: Connection = Nats.connect(s"nats://localhost:${getNatsPort()}")
     scala.sys.addShutdownHook({
       nc.close()
       streams.close()
