@@ -1,6 +1,6 @@
-package com.github.fma
+package com.github.fma.slick
 
-import com.github.fma.NatsKafkaDemo.getClass
+import com.github.fma.Utils
 import com.github.fma.Utils._
 import com.typesafe.config.Config
 import org.scalatest._
@@ -16,10 +16,9 @@ import slick.jdbc.PostgresProfile.api._
 
 import java.util.concurrent.Executors
 import scala.concurrent.{ExecutionContext, ExecutionContextExecutor}
-import scala.io.{BufferedSource, Source}
 
-class NatsKafkaDemoSpec extends AnyFlatSpec with should.Matchers with BeforeAndAfter with Mockito {
-  val logger: Logger = LoggerFactory.getLogger(classOf[NatsKafkaDemoSpec])
+class NatsKafkaSlickDemoSpec extends AnyFlatSpec with should.Matchers with BeforeAndAfter with Mockito {
+  val logger: Logger = LoggerFactory.getLogger(classOf[NatsKafkaSlickDemoSpec])
 
   /*
    * NOTE: I changed the test database name, username and password
@@ -113,7 +112,7 @@ class NatsKafkaDemoSpec extends AnyFlatSpec with should.Matchers with BeforeAndA
   }
 
   "Postgres" should s"have ${TWEETS_COUNT} elements after NatsKafkaDemo runs" in {
-    NatsKafkaDemo.main(Array())
+    NatsKafkaSlickDemo.main(Array())
 
     val db = Utils.getDB
     val tweetsTable = TableQuery[TweetsTable]
