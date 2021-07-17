@@ -4,37 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8341cdc-7c2d-4398-b02e-4e15bad36273" name="Default Changelist" comment="Got test that runs NatsKafkaDemo and checks number of tweets in Postgres working">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1addf36520d59a2be25e1b65e4f04cd250e6f17b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/b/1bfcc386e396006cf40e1bd8141583bec68ee526" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/f/1f722ace4f4a86e30cba57771337c5ad8b4033ca" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2d6e3b63cb86a8576aa03c731e1c6578dbdeda17" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/3583a03abc61f9a983b67fd3810cb1f4192490b6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/0/501883a8d622c16ade7c998d9e53b7ee6c8efc06" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/2/6284eecedd2d85fb3913164f96df4582210062ba" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f7f3c99a01a89d09f977906a6350cce513b3ffc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/738111ad290bb2534116e9cbdebd1609965a8fe9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/6/8631789195e5b455a635903896d58aaae1feee1c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/9/8990fd992b2e094f54afd9a6afefc186af8ab20d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9d307aa44e319a36e37515f365650c430427579f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/ae853b66fcf171f9c6719c645a83b2c191403635" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/9/c949a3e6f43b66dd4394853553a04f8c41e6e4e3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/f/cfe5d52b9bd852d3021015f635a2cd7ddbbb4802" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/2/d22d0cd2b7972428357a7dcf86ddd60133481b3c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/d/ddb0bafb1c8a7a6e4811bf7fd8d6b461b3e7119e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e4b0cd7931b24aaf38ba07a4ac3ec674bbcd0d6c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/c/ec6bffc17baf52f295a66da10036116095da4f59" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/ee20cc8846d9897e62ee4f52aac49674fa57a27d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f0690860adcdd84c8ea7f4a7e6fb5ddde217c648" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="b8341cdc-7c2d-4398-b02e-4e15bad36273" name="Default Changelist" comment="IntelliJ stuff">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_18_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_1_3_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_1_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7dc8452c3135299a066b429d0afc83d36279c006" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/1/9113a40fd74085bd46f21383bdf3da145f434715" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/github/fma/hibernate/entity/Tweets.scala" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/scala/com/github/fma/slick/NatsKafkaSlickDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_19.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_25_0_GA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f0690860adcdd84c8ea7f4a7e6fb5ddde217c648" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nats-kafka-demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/nats-kafka-demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/fma/NatsKafkaDemo.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/com/github/fma/NatsKafkaDemoSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/com/github/fma/slick/NatsKafkaDemoSpec.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/com/github/fma/NatsKafkaDemoSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/com/github/fma/slick/NatsKafkaSlickDemoSpec.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,9 +106,11 @@
       <recent name="C:\Users\John\IdeaProjects\nats-kafka-demo\src\test\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.github.fma.slick" />
       <recent name="com.github.fma" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.github.fma.hibernate.entity" />
       <recent name="com.github.fma" />
     </key>
   </component>
@@ -211,7 +213,7 @@
       <workItem from="1626227918907" duration="711000" />
       <workItem from="1626389907022" duration="676000" />
       <workItem from="1626395038766" duration="859000" />
-      <workItem from="1626524599537" duration="1611000" />
+      <workItem from="1626524599537" duration="3838000" />
     </task>
     <task id="LOCAL-00001" summary="Added NatsKafkaDemo and got logging and initial functionality of publishing to NATS working">
       <created>1618927324733</created>
@@ -318,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619576015607</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="IntelliJ stuff">
+      <created>1626551424559</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1626551424559</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,12 +354,12 @@
     <MESSAGE value="Added scalatest and testcontainers dependencies to pom.xml" />
     <MESSAGE value="Added com.github.fma package" />
     <MESSAGE value="Got TestContainers working with simple test to confirm the container is running" />
-    <MESSAGE value="IntelliJ stuff" />
     <MESSAGE value="Modified Utils.getDB with a getConfig() function&#10;Added logic to mock getConfig() function&#10;Added test to run NatsKafkaDemo and check Postgres" />
     <MESSAGE value="Got all 3 containers up and running" />
     <MESSAGE value="Added ability to provide NATS port and Kafka bootstrap servers from tests" />
     <MESSAGE value="Got test that runs NatsKafkaDemo and checks number of tweets in Postgres working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Got test that runs NatsKafkaDemo and checks number of tweets in Postgres working" />
+    <MESSAGE value="IntelliJ stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="IntelliJ stuff" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

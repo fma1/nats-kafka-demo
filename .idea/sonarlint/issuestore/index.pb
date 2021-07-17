@@ -1,6 +1,4 @@
 
-?
-sql/twitter.sql,f\0\f0690860adcdd84c8ea7f4a7e6fb5ddde217c648
 u
 E.idea/libraries/Maven__org_testcontainers_database_commons_1_15_3.xml,1\a\1addf36520d59a2be25e1b65e4f04cd250e6f17b
 i
@@ -39,8 +37,6 @@ m
 =.idea/libraries/Maven__org_specs2_specs2_mock_2_13_4_10_6.xml,2\d\2d6e3b63cb86a8576aa03c731e1c6578dbdeda17
 S
 #src/main/resources/application.conf,3\5\3583a03abc61f9a983b67fd3810cb1f4192490b6
-C
-nats-kafka-demo.iml,a\e\ae853b66fcf171f9c6719c645a83b2c191403635
 \
 ,src/main/scala/com/github/fma/Solution.scala,7\d\7dc8452c3135299a066b429d0afc83d36279c006
 Y
