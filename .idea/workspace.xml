@@ -4,47 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="640bc83b-ecee-4291-868b-c14543b4d741" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_2_0_0_alpha1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_simple_2_0_0_alpha2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/github/fma/hibernate/NatsKafkaHibernateDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/github/fma/hibernate/entity/HibernateTweet.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/github/fma/slickpkg/NatsKafkaSlickDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/scala/com/github/fma/hibernate/NatsKafkaHibernateDemoSpec.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1addf36520d59a2be25e1b65e4f04cd250e6f17b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/b/1bfcc386e396006cf40e1bd8141583bec68ee526" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/f/1f722ace4f4a86e30cba57771337c5ad8b4033ca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2d6e3b63cb86a8576aa03c731e1c6578dbdeda17" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/3583a03abc61f9a983b67fd3810cb1f4192490b6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/0/501883a8d622c16ade7c998d9e53b7ee6c8efc06" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/2/6284eecedd2d85fb3913164f96df4582210062ba" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f7f3c99a01a89d09f977906a6350cce513b3ffc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/738111ad290bb2534116e9cbdebd1609965a8fe9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7dc8452c3135299a066b429d0afc83d36279c006" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/6/8631789195e5b455a635903896d58aaae1feee1c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/9/8990fd992b2e094f54afd9a6afefc186af8ab20d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/1/9113a40fd74085bd46f21383bdf3da145f434715" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9d307aa44e319a36e37515f365650c430427579f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/ae853b66fcf171f9c6719c645a83b2c191403635" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/9/c949a3e6f43b66dd4394853553a04f8c41e6e4e3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/f/cfe5d52b9bd852d3021015f635a2cd7ddbbb4802" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/2/d22d0cd2b7972428357a7dcf86ddd60133481b3c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/d/ddb0bafb1c8a7a6e4811bf7fd8d6b461b3e7119e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e4b0cd7931b24aaf38ba07a4ac3ec674bbcd0d6c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/c/ec6bffc17baf52f295a66da10036116095da4f59" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/ee20cc8846d9897e62ee4f52aac49674fa57a27d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nats-kafka-demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/nats-kafka-demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/fma/Utils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/fma/slickpkg/Utils.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/fma/slick/NatsKafkaSlickDemo.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/com/github/fma/slick/NatsKafkaSlickDemoSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/com/github/fma/slickpkg/NatsKafkaSlickDemoSpec.scala" afterDir="false" />
+    <list default="true" id="640bc83b-ecee-4291-868b-c14543b4d741" name="Default Changelist" comment="Got NatsKafkaHibernateDemoSpec working&#10;Upgraded NATS and Kafka container versions&#10;Added slf4j-simple dependency&#10;Added hibernate property configuration to NatsKafkaHibernateDemo&#10;Fixed issue with HibernateTweet entity by manually specifying java.lang for wrapper classes">
+      <change afterPath="$PROJECT_DIR$/nats-kafka-demo.mp4" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -144,6 +106,21 @@
       <option name="presentableId" value="Default" />
       <updated>1636323166960</updated>
     </task>
+    <task id="LOCAL-00001" summary="IntelliJ stuff">
+      <created>1636336879338</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1636336879338</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Got NatsKafkaHibernateDemoSpec working&#10;Upgraded NATS and Kafka container versions&#10;Added slf4j-simple dependency&#10;Added hibernate property configuration to NatsKafkaHibernateDemo&#10;Fixed issue with HibernateTweet entity by manually specifying java.lang for wrapper classes">
+      <created>1636337040533</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1636337040533</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -156,5 +133,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="IntelliJ stuff" />
+    <MESSAGE value="Got NatsKafkaHibernateDemoSpec working&#10;Upgraded NATS and Kafka container versions&#10;Added slf4j-simple dependency&#10;Added hibernate property configuration to NatsKafkaHibernateDemo&#10;Fixed issue with HibernateTweet entity by manually specifying java.lang for wrapper classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got NatsKafkaHibernateDemoSpec working&#10;Upgraded NATS and Kafka container versions&#10;Added slf4j-simple dependency&#10;Added hibernate property configuration to NatsKafkaHibernateDemo&#10;Fixed issue with HibernateTweet entity by manually specifying java.lang for wrapper classes" />
   </component>
 </project>
