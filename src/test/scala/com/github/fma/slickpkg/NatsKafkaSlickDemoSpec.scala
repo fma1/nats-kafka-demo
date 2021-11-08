@@ -1,7 +1,6 @@
-package com.github.fma.slick
+package com.github.fma.slickpkg
 
-import com.github.fma.Utils
-import com.github.fma.Utils._
+import com.github.fma.slickpkg.Utils._
 import com.typesafe.config.Config
 import org.scalatest._
 import org.scalatest.flatspec._
@@ -16,6 +15,7 @@ import slick.jdbc.PostgresProfile.api._
 
 import java.util.concurrent.Executors
 import scala.concurrent.{ExecutionContext, ExecutionContextExecutor}
+import scala.io.{BufferedSource, Source}
 
 class NatsKafkaSlickDemoSpec extends AnyFlatSpec with should.Matchers with BeforeAndAfter with Mockito {
   val logger: Logger = LoggerFactory.getLogger(classOf[NatsKafkaSlickDemoSpec])
@@ -111,7 +111,7 @@ class NatsKafkaSlickDemoSpec extends AnyFlatSpec with should.Matchers with Befor
     assert(postgresContainer.isRunning)
   }
 
-  "Postgres" should s"have ${TWEETS_COUNT} elements after NatsKafkaDemo runs" in {
+  "Postgres" should s"have ${TWEETS_COUNT} elements after NatsKafkaSlickDemo runs" in {
     NatsKafkaSlickDemo.main(Array())
 
     val db = Utils.getDB

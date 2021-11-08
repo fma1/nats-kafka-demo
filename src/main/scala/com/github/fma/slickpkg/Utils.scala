@@ -1,4 +1,4 @@
-package com.github.fma
+package com.github.fma.slickpkg
 
 import com.danielasfregola.twitter4s.entities.Tweet
 import com.typesafe.config.{Config, ConfigFactory}
