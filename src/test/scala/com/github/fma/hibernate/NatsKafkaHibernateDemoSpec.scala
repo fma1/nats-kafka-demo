@@ -2,7 +2,7 @@ package com.github.fma.hibernate
 
 import com.github.fma.hibernate.NatsKafkaHibernateDemo.{sessionFactory, toHibernateTweet}
 import com.github.fma.hibernate.entity.HibernateTweet
-import com.github.fma.slickpkg.Utils._
+import com.github.fma.utils.Utils._
 import com.typesafe.config.Config
 import org.scalatest._
 import org.scalatest.flatspec._

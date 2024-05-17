@@ -1,6 +1,6 @@
 package com.github.fma.hibernate
 
-import com.github.fma.slickpkg.Utils._
+import com.github.fma.utils.Utils._
 import com.danielasfregola.twitter4s.entities.Tweet
 import com.danielasfregola.twitter4s.processors.TwitterProcessor.{json4sFormats, serialization => theSerialization}
 import com.github.fma.hibernate.entity.HibernateTweet

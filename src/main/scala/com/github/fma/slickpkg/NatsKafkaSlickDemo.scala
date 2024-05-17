@@ -1,6 +1,7 @@
 package com.github.fma.slickpkg
 
-import com.github.fma.slickpkg.Utils._
+import com.github.fma.utils.Utils._
+import com.github.fma.slickpkg.SlickUtils._
 import com.danielasfregola.twitter4s.entities.Tweet
 import com.danielasfregola.twitter4s.processors.TwitterProcessor.{json4sFormats, serialization => theSerialization}
 import io.github.azhur.kafkaserdejson4s.Json4sSupport

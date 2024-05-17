@@ -1,6 +1,7 @@
 package com.github.fma.slickpkg
 
-import com.github.fma.slickpkg.Utils._
+import com.github.fma.utils.Utils
+import com.github.fma.utils.Utils._
 import com.typesafe.config.Config
 import org.scalatest._
 import org.scalatest.flatspec._
@@ -12,8 +13,10 @@ import org.testcontainers.containers.wait.strategy.LogMessageWaitStrategy
 import org.testcontainers.containers.{GenericContainer, KafkaContainer, PostgreSQLContainer}
 import org.testcontainers.utility.DockerImageName
 import slick.jdbc.PostgresProfile.api._
-
 import java.util.concurrent.Executors
+
+import com.github.fma.slickpkg.SlickUtils.TweetsTable
+
 import scala.concurrent.{ExecutionContext, ExecutionContextExecutor}
 import scala.io.{BufferedSource, Source}
 
